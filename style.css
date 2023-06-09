@@ -1,0 +1,267 @@
+* {
+    font-family: "Verdana", "Calibri", "Roboto", sans-serif;
+    line-height: 1.5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ebebeb;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+}
+
+.image-container {
+    background-color: #ebebeb;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+img {
+    object-fit: cover;
+    display: flex;
+}
+
+@media screen and (max-width: 450px) {
+    .image-container {
+        height: auto;
+        width: auto;
+        margin-bottom: 8px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 16px;
+    margin-left: 16px;
+}
+
+@media screen and (max-width: 450px) {
+    .navbar {
+        flex-direction: column;
+        display: block;
+    }
+}
+
+.obere-leiste {
+    justify-content: space-between;
+    padding-right: 16px;
+    padding-left: 16px;
+    display: flex;
+}
+
+@media screen and (max-width: 400px) {
+    .obere-leiste {
+        flex-direction: column-reverse;
+    }
+}
+
+
+
+.site-nav-list {
+    background: linear-gradient(to bottom, #fa883b, #f5a976);
+    list-style-type: none;
+    margin: 16px;
+    padding: 8px;
+    display: flex;
+    font-size: 20px;
+    box-shadow: 3px 3px 5px black;
+    text-shadow: 1px 1px 1px 0.9 black;
+    width: auto;
+}
+
+.site-nav-list li {
+    display: inline;
+}
+
+.site-nav-list li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.site-nav-list :hover {
+    text-decoration: underline;
+}
+
+.klickehier{
+    color: #fa883b;
+    text-decoration: underline;
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.wikilink {
+    text-decoration: none;
+    color: black;
+    margin-left: 16px;
+    padding-left: 16px;
+}
+
+.hiertext {
+    font-size: large;
+    text-decoration: none;
+}
+
+h1 {
+    background: linear-gradient(to bottom, #004e98, #3a6ea5);
+    color: #ebebeb;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 3px 3px 5px black;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+h2 {
+    background: linear-gradient(to bottom, #fa883b, #f5a976);
+    color: rgb(0, 0, 0);
+    box-shadow: 3px 3px 5px black;
+    text-shadow: 1px 1px 1px 0.9 black;
+    padding: 8px;
+    margin: 16px;
+    font-size: 20px;
+
+}
+
+@media screen and (max-width: 907px) {
+    h1 {
+        font-size: 22px;
+        display: inline-block;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    h1,
+    h2 {
+        font-size: 15px;
+        display: inline-block;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .site-nav-list {
+        font-size: 15px;
+        display: inline-block;
+    }
+}
+
+h4 {
+    margin: 20px;
+}
+
+.maintext {
+    text-shadow: 1px 1px 1px 0.2 black;
+    text-align: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+}
+
+.infotext{
+    text-shadow: 1px 1px 1px 0.2 black;
+    text-align: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+}
+
+@media screen and (max-width:650px) {
+    .maintext {
+        margin-left: 16px;
+        margin-right: 16px;
+        display: flex;
+    }
+}
+
+.filter-table {
+    margin: 2px;
+}
+
+.content-Tabelle {
+    margin-left: 30px;
+    margin-right: 16px;
+    width: 80%;
+}
+
+table#footprint-table {
+    margin: 16px;
+    width: 80%;
+}
+
+table#footprint-table>thead>tr {
+    background-color: #f5a976;
+}
+
+table#footprint-table>thead>tr>th:hover {
+    background-color: #ff6700;
+    cursor: pointer;
+}
+
+
+table#footprint-table,
+table#footprint-table>thead>tr>th,
+table#footprint-table>tbody>tr>td {
+    border: Solid 1px #000000;
+    padding: 3px 3px 3px 3px;
+    color: #000000;
+}
+
+
+table#footprint-table>thead>tr>td {
+    border: Solid 1px #888888;
+    padding: 3px 3px 3px 3px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+table#footprint-table>tbody>tr:nth-child(even) {
+    background: linear-gradient(to bottom, #ebebeb, #c0c0c0);
+}
+
+table#footprint-table>tbody>tr:nth-child(odd) {
+    background: linear-gradient(to top, #7d97b3, #5c83ac);
+}
+
+.site-footer {
+    padding: 1%;
+    text-align: center;
+    line-height: 1.5;
+    font-size: small;
+    margin-left: 16px;
+    color: #616161;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #616161;
+}
+
+.footer-links li {
+    display: inline-flex;
+}

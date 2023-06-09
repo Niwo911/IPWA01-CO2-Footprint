@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "rang": 1,
+        "unternehmen": "Saudi-Aramco",
+        "land": "Saudi-Arabien",
+        "anteil": 4.6
+    },
+    {
+        "id": 2,
+        "rang": 2,
+        "unternehmen": "Gazprom",
+        "land": "Russland",
+        "anteil": 2.7
+    },
+    {
+        "id": 3,
+        "rang": 3,
+        "unternehmen": "National Iranian Oil Company",
+        "land": "Iran",
+        "anteil": 2.4
+    },
+    {
+        "id": 4,
+        "rang": 4,
+        "unternehmen": "Coal India",
+        "land": "Indien",
+        "anteil": 2.4
+    },
+    {
+        "id": 5,
+        "rang": 5,
+        "unternehmen": "China Shenhua Energy",
+        "land": "China",
+        "anteil": 2.4
+    },
+    {
+        "id": 6,
+        "rang": 6,
+        "unternehmen": "Rosneft",
+        "land": "Russland",
+        "anteil": 1.8
+    },
+    {
+        "id": 7,
+        "rang": 7,
+        "unternehmen": "China National Petroleum Corp.",
+        "land": "China",
+        "anteil": 1.5
+    },
+    {
+        "id": 8,
+        "rang": 8,
+        "unternehmen": "Abu Dhabi National Oil Company",
+        "land": "Vereinigte Arabische Emirate",
+        "anteil": 1.4
+    },
+    {
+        "id": 9,
+        "rang": 9,
+        "unternehmen": "ExxonMobile",
+        "land": "Vereinigte Staaten ",
+        "anteil": 1.4
+    },
+    {
+        "id": 10,
+        "rang": 10,
+        "unternehmen": "Pemex",
+        "land": "Mexiko",
+        "anteil": 1.3
+    },
+    {
+        "id": 11,
+        "rang": 11,
+        "unternehmen": "Royal Dutch Shell",
+        "land": "Niederlande, Vereinigtes Königreich",
+        "anteil": 1.2
+    },
+    {
+        "id": 12,
+        "rang": 12,
+        "unternehmen": "Sonatrach",
+        "land": "Algerien",
+        "anteil": 1.2
+    },
+    {
+        "id": 13,
+        "rang": 13,
+        "unternehmen": "Kuweit Petroleum Corp.",
+        "land": "Kuweit",
+        "anteil": 1.1
+    },
+    {
+        "id": 14,
+        "rang": 14,
+        "unternehmen": "BP",
+        "land": "Vereinigtes Königreich",
+        "anteil": 1.1
+    },
+    {
+        "id": 15,
+        "rang": 15,
+        "unternehmen": "Qatar Petroleum",
+        "land": "Katar",
+        "anteil": 1
+    }
+]

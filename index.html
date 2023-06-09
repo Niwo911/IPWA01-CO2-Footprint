@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO²-Footprint</title>
+    <!--Stylesheet+Javascript-Einbindung-->
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="navbar">
+            <div class="image-container">
+                <img src="/Fallstudie Aufgabenstellung 1 CO2-Footprint/Logo/earthlogoplaceholder.png"
+                    alt="Logo der Erde / CO2-Footprint" height="160">
+            </div>
+            <div class="navbar uberschriftrechts">
+                <h1>Welche Unternehmen und Länder emittieren wie viel CO² im Jahr?</h1>
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="site-nav">
+        <div class="obere-leiste">
+            <div class="h2ueberschrift">
+                <h2>Die 15 größten Unternehmen nach Treibhausgas-Emissionen im Vergleich</h2>
+            </div>
+            <div class="navigationsleiste">
+                <ul class="site-nav-list">
+                    <li> <a href="index.html">Startseite</a></li>
+                    <li> <a href="#tabelleanchor">Tabelle</a> </li>
+                    <li> <a href="ueber.html">Über</a></li>
+                    <li> <a href="#footer-kontakt">Rechtliches</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="maintext">
+            <p>Die Liste der fördernden Unternehmen nach Treibhausgas-Emissionen sortiert die
+                Unternehmen
+                nach dem
+                CO2-Äquivalent-Potenzial ihrer Förderprodukte, sei es Erdöl, Erdgas oder Kohle. Diese Daten basieren
+                auf
+                Informationen und Schätzungen des Carbon Disclosure Project und des Climate Accountability
+                Institute,
+                die die Unternehmen mit den höchsten Treibhausgas-Emissionen identifizieren. Die Liste liefert
+                den Prozentsatz dieser Emissionen im Vergleich zum globalen
+                Treibhausgasausstoß. Dabei werden die Emissionen nach dem GHG-Protocol-Standard des World Resources
+                Institute (WRI) und des World Business Council for Sustainable Development (WBCSD) kategorisiert.
+
+                Die Emissionswerte umfassen bestimmte Scope 1- und Scope 3-Emissionen. Scope 1-Emissionen beziehen
+                sich
+                auf die Emissionen, die innerhalb der festgelegten Systemgrenzen entstehen, während Scope
+                3-Emissionen
+                alle anderen Emissionen umfassen, die durch die Tätigkeiten eines Unternehmens verursacht werden,
+                jedoch
+                nicht direkt von diesem kontrolliert werden können. Um Doppelzählungen zu vermeiden, werden in der
+                Liste
+                nur Scope 1-Emissionen berücksichtigt, die durch die Förderung fossiler Brennstoffe verursacht
+                werden.
+                Von den Scope 3-Emissionen werden wiederum nur diejenigen einbezogen, die durch die Nutzung der von
+                den
+                Unternehmen vertriebenen Produkte entstehen. Es ist wichtig anzumerken, dass diese Kategorie in der
+                Regel mehr als 90 % der insgesamt einem fossilen Unternehmen zurechenbaren Emissionen ausmacht. Die
+                Liste bietet somit eine produzentenorientierte Sichtweise der Treibhausgasemissionen und
+                berücksichtigt
+                dabei nicht die tatsächlichen Verbraucher.
+            <br>
+            Quelle: Wikipedia
+            </p>
+
+
+            <br>
+        </div>
+        <section class="content-Tabelle" id="tabelleanchor">
+            <br>
+            <div id="flip">
+                <p class="klickehier">
+                    Klicke hier, um die Tabelle ein -und auszuklappen
+                </p>
+            </div>
+            <div id="panel">
+                <br />
+                <span>Suchen und filtern: </span>
+                <input id="myInput" class="fortextbox" type="text" placeholder="Suchen..." />
+
+                <h4 class="sortieren">Zum Sortieren bitte auf die jeweilige Spaltenüberschrift klicken:</h4>
+
+                <table id="footprint-table">
+                    <thead>
+                        <tr>
+                            <th data-type="number" title="Nach Rang sortieren">Rang</th>
+                            <th data-type="string" title="Nach Unternehmen sortieren">Unternehmen</th>
+                            <th data-type="string" title="Nach Land sortieren">Land</th>
+                            <th data-type="number" title="Nach Prozent sortieren">Anteil</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-output">
+                        <!--Tabelle kommt aus der tabelle.json-Datei-->
+                    </tbody>
+                </table>
+        </section>
+
+        <!--Skript aus Jquery zum Ein -und Ausklappen der Tabelle + Suchfeld-->
+        <script>type = "text/javascript"
+            $(document).ready(function () {
+                $("#flip").click(function () {
+                    $("#panel").slideToggle("slow");
+                });
+                //Tabellenfilter
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#data-output tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+
+        <!--Skript aus Jquery zum alphabetischen / numerischen Sortieren-->
+        <script>
+            $('th').click(function () {
+                var table = $(this).closest('#footprint-table');
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+                this.asc = !this.asc;
+                if (!this.asc) {
+                    rows = rows.reverse();
+                }
+                table.append(rows);
+            });
+
+            function comparer(index) {
+                return function (a, b) {
+                    var valA = getCellValue(a, index);
+                    var valB = getCellValue(b, index);
+                    return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB);
+                };
+            }
+
+            function getCellValue(row, index) {
+                return $(row).children('td').eq(index).text();
+            }
+        </script>
+        <br>
+        <div>
+            <p class="wikilink">
+                Sie wollen weitere Informationen über dieses Thema?
+                <a class="hiertext"
+                    href="https://de.wikipedia.org/wiki/Liste_der_f%C3%B6rdernden_Unternehmen_nach_Treibhausgas-Emissionen">Hier
+                </a>gelangen Sie zur ausführlichen Wikipedia-Seite.
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <br>
+
+        <ul class="footer-links" id="footer-kontakt">
+            <li>Rechtliches:</li>
+            <br>
+            <li> <a href="impressum.html">Impressum </a></li>
+            <li> <a href="kontakt.html">Kontakt </a></li>
+            <li> <a href="datenschutz.html">Datenschutz </a></li>
+            <br>
+            <li>&copy; Niklas Wolter 2023</li>
+        </ul>
+
+    </footer>
+</body>
+
+</html>
